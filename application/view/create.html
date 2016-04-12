@@ -1,0 +1,18 @@
+﻿
+<h4>创建博客</h4>
+你好  <?php echo $_SESSION['username'];  ?><br/><br/>
+
+<a href="./index.php?c=blog&a=mypage">返回主页</a><br/>
+
+<form action="./index.php?c=operate&a=add"  method="post">
+	标题<input type="text" name="title" /><br/><br/>
+	内容
+
+	
+     <input type="text" name="content" />
+    
+	<input type="submit" value="创建博客" />
+</form>
+
+
+ 

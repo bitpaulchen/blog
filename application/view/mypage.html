@@ -1,0 +1,29 @@
+<!--页面展示-->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h2>我的页面</h2>
+<p>你好,<?php echo $_SESSION['username']?></p>
+<p><a href ="admin.php">进入管理员页面</a></p>
+<p><a href ="./loginout.php">退出系统</a></p>
+<p><a href ="index.php?c=operate&a=create">创建博客</a></p>
+<h4>您的博客列表</h4>
+
+<table border='1'>
+<tr><th>id</td><th>TITLE</th><th>CONTENT</th><th colspan='2'>更多操作</th><th>时间</th></tr>
+<?php foreach ($list as $row) : ?>
+<tr>
+<td><?php echo $row['id']; ?></td>
+<td><a href='index.php?c=operate&a=detail&id=<?php echo $row['id']?>'><?php echo $row['title']; ?></a></td>
+<td><?php echo $row['content']; ?></td>
+<td><a href='index.php?c=operate&a=edit&id=<?php echo $row['id'];?>'>更改</a></td><td><a href='index.php?c=operate&a=delete&id=<?php echo $row['id'];?>'>删除</a></td>
+<td><?php echo $row['time']; ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+
+</body>
+</html>

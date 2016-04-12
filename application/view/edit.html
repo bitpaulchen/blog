@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h4>修改博客</h4>
+你好  <?php echo $_SESSION['username'];  ?><br/><br/>
+
+<a href="./index.php?c=blog&a=mypage">返回主页hadsa</a><br/>
+
+
+<form action="./index.php?c=operate&a=update"  method="post">
+	<input type="hidden" name="id" value="<?php echo $row['id']; ?>" /><br><br>
+	标题<input type="text" name="title" value="<?php echo $row['title']; ?>" /><br><br>
+	内容<textarea name="content"> 
+	 <?php echo $row['content']; ?>
+	</textarea><br/><br/>
+	<input type="submit" value="修改博客" />
+</form>
+
+
+
+
+</body>
+</html>
+ 
